@@ -5,7 +5,7 @@ require:
 	a2enmod rewrite
 	a2enmod headers
 	a2enmod ssl
-	iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
+	ufw allow "Apache Secure"
 	cp -f etc/apache2/sites-available/default-ssl /etc/apache2/sites-available/default-ssl
 	ln -s /etc/apache2/sites-available/default-ssl /etc/apache2/sites-enabled/000-default-ssl
 	rm -f /etc/apache2/sites-enabled/000-default
